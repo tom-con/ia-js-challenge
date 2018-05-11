@@ -2,6 +2,14 @@ $(document).ready(() => {
 
     let dragged = null
     let blackCount = 1
+
+    // The nodes data structure is used to keep
+    // track of wins. Ideally this would be the
+    // entire game state so that the UI is an
+    // exact reflection of state, however the
+    // state for this application is maintained
+    // within the DOM and the javascript, which
+    // is not exactly prefered.
     let nodes = {
         red: false,
         blue: false,
@@ -9,6 +17,7 @@ $(document).ready(() => {
         black2: false,
         green: false,
     }
+
     // Return the dots to their starting
     // states
     function resetInitialState(){
@@ -21,14 +30,16 @@ $(document).ready(() => {
             black2: false,
             green: false,
         }
+        blackCount = 1
+        dragged = null
     }
 
     function checkWin(){
         let allDone = Object.values(nodes).reduce((acc, n) => acc && n, true)
+        // Handle win logic here. Perhaps propagate
+        // to a specific UI condition.
         if(allDone){
             console.log('won')
-        } else {
-            console.log('did not yet win')
         }
     }
 
@@ -57,6 +68,8 @@ $(document).ready(() => {
     //    color before allowing drop
     // 2. Toggle classes between the 'in-
     //    position' and 'in-menu' dots.
+    // 3. On successful drop, checks if
+    //    win conditions are met.
     // Note: I kept the dragenter event
     // in case I want to improve the UX of
     // hinting at a (un)successful drop
@@ -67,13 +80,18 @@ $(document).ready(() => {
         .on('drop', (e) => {
             let color = $(dragged).data('color')
             if(color === $(e.target).data('color')){
+                // Necessary because there are two black nodes
                 if(color === 'black'){
                     color += blackCount
                     blackCount+=1
+                    // This ensures black can't be put here again
+                    $(e.target).data('color', 'wasBlack')
                 }
                 $(e.target).removeClass('hidden')
                 $(dragged).addClass('hidden')
+                // Update js state to check win conditions
                 nodes[color] = true
+                checkWin()
             }
         })
 
