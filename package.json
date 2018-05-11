@@ -1,0 +1,27 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "A Fun Logo Game",
+  "main": "bin/app.bundle.js",
+  "scripts": {
+    "test": "test",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tom-con/ia-js-challenge.git"
+  },
+  "author": "Tom Conchie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tom-con/ia-js-challenge/issues"
+  },
+  "homepage": "https://github.com/tom-con/ia-js-challenge#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.8.1",
+    "webpack-cli": "^2.1.3"
+  }
+}
