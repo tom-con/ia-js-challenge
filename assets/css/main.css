@@ -2,37 +2,37 @@
     position: relative;
 }
 
-#red-dot {
+#red-dot .in-position {
     position: absolute;
     top: 72px;
     left: 456px;
 }
 
-#blue-dot {
+#blue-dot .in-position {
     position: absolute;
     top: 46px;
     left: 275px;
 }
 
-#black-dot {
+#black-dot .in-position {
     position: absolute;
     top: 193px;
     left: 47px;
 }
 
-#second-black-dot{
+#second-black-dot .in-position {
     position: absolute;
     top: 288px;
     left: 419px;
 
 }
 
-#green-dot {
+#green-dot .in-position {
     position: absolute;
     top: 335px;
     left: 143px;
 }
 
 .hidden {
-    display: hidden;
+    visibility: hidden;
 }
