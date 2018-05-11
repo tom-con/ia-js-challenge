@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     entry: ['babel-polyfill','./assets/js/src/app.js'],
@@ -6,6 +7,17 @@ module.exports = {
         path: path.resolve(__dirname, 'assets/js/bin'),
         filename: 'app.bundle.js'
     },
+    watch: true,
+    watchOptions: {
+        ignored: /node_modules/,
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        })
+    ],
     module: {
         rules:[
             {

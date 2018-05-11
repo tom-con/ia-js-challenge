@@ -1,0 +1,38 @@
+.img-container {
+    position: relative;
+}
+
+#red-dot {
+    position: absolute;
+    top: 72px;
+    left: 456px;
+}
+
+#blue-dot {
+    position: absolute;
+    top: 46px;
+    left: 275px;
+}
+
+#black-dot {
+    position: absolute;
+    top: 193px;
+    left: 47px;
+}
+
+#second-black-dot{
+    position: absolute;
+    top: 288px;
+    left: 419px;
+
+}
+
+#green-dot {
+    position: absolute;
+    top: 335px;
+    left: 143px;
+}
+
+.hidden {
+    display: hidden;
+}
