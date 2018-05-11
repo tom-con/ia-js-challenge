@@ -2,7 +2,7 @@
   "name": "y",
   "version": "1.0.0",
   "description": "A Fun Logo Game",
-  "main": "bin/app.bundle.js",
+  "main": "assets/js/bin/app.bundle.js",
   "scripts": {
     "test": "test",
     "build": "webpack"
@@ -21,6 +21,10 @@
     "babel-polyfill": "^6.26.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
     "webpack": "^4.8.1",
     "webpack-cli": "^2.1.3"
   }
