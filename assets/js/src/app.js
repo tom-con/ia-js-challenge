@@ -1,6 +1,5 @@
 import 'babel-polyfill'
-import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'jquery'
 import controller from './controller.js'
-import css from '../../css/main.css'
+import '../../css/main.css'
