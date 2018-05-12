@@ -57,6 +57,8 @@ $(document).ready(() => {
     $('.dot.in-menu')
         .on('dragstart', (e) => {
             dragged = $(e.target)
+            let color = $(dragged).data('color')
+            $('.red-bg').addClass('add-opacity')
         })
         .on('dragend', (e) => {
             dragged = null
