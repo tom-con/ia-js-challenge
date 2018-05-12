@@ -58,9 +58,11 @@ $(document).ready(() => {
         .on('dragstart', (e) => {
             dragged = $(e.target)
             let color = $(dragged).data('color')
-            $('.red-bg').addClass('add-opacity')
+            $('.bg-controller').removeClass('add-opacity')
+            $(`.${color}-bg`).addClass('add-opacity')
         })
         .on('dragend', (e) => {
+            let color = $(dragged).data('color')
             dragged = null
         })
 

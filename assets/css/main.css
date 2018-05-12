@@ -65,15 +65,18 @@
 }
 
 .red-bg {
-    z-index: -1;
+    z-index: -2;
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient( #A8A7A7,   #CC527A,   #E8175D,   #474747);
     opacity: 0;
-    transition: opacity 1s linear;
+    transition: opacity 0.5s linear;
+    -webkit-transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+    -o-transition: opacity 0.5s linear;
     background-size: 600% 600%;
     -webkit-animation: BackgroundPulse 59s ease infinite;
     -moz-animation: BackgroundPulse 59s ease infinite;
@@ -81,11 +84,18 @@
 }
 
 .blue-bg {
-    z-index: -1;
+    z-index: -2;
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient( #011f4b,#03396c, #005b96, #6497b1, #b3cde0);
     opacity: 0;
-    transition: opacity 1s linear;
+    transition: opacity 0.5s linear;
+    -webkit-transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+    -o-transition: opacity 0.5s linear;
     background-size: 600% 600%;
     -webkit-animation: BackgroundPulse 59s ease infinite;
     -moz-animation: BackgroundPulse 59s ease infinite;
@@ -93,11 +103,18 @@
 }
 
 .black-bg {
-    z-index: -1;
+    z-index: -2;
     position: absolute;
-    background: linear-gradient( #A8A7A7,   #CC527A,   #E8175D,   #474747);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( #A8A7A7,   #686868,   #383838,   #080808);
     opacity: 0;
-    transition: opacity 1s linear;
+    transition: opacity 0.5s linear;
+    -webkit-transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+    -o-transition: opacity 0.5s linear;
     background-size: 600% 600%;
     -webkit-animation: BackgroundPulse 59s ease infinite;
     -moz-animation: BackgroundPulse 59s ease infinite;
@@ -105,11 +122,18 @@
 }
 
 .green-bg {
-    z-index: -1;
+    z-index: -2;
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient( #E5FCC2,   #9DE0AD,   #45ADA8,   #547980,   #594F4F);
     opacity: 0;
-    transition: opacity 1s linear;
+    transition: opacity 0.5s linear;
+    -webkit-transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+    -o-transition: opacity 0.5s linear;
     background-size: 600% 600%;
     -webkit-animation: BackgroundPulse 59s ease infinite;
     -moz-animation: BackgroundPulse 59s ease infinite;
