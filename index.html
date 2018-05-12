@@ -7,28 +7,48 @@
     <title>IA Logo Challenge</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">IA - JS Challenge</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline my-2 my-lg-0">
+                <button id="reset" class="btn btn-outline-success my-2 my-sm-0">Reset</button>
+            </form>
+        </div>
+    </nav>
     <main class="van-bg">
         <div class="bg-controller red-bg"></div>
         <div class="bg-controller black-bg"></div>
         <div class="bg-controller blue-bg"></div>
         <div class="bg-controller green-bg"></div>
-        <h1>Inspiring Apps - Logo Bonanza</h1>
-        <div class="img-container">
-            <img id="background" src="assets/img/ia-logo-back.png"/>
-            <img id="black-dot" class="dot in-position hidden" data-color="black" src="assets/img/ia-logo-dot-black.png"/>
-            <img id="second-black-dot" class="dot in-position hidden" data-color="black" src="assets/img/ia-logo-dot-black.png"/>
-            <img id="blue-dot" class="dot in-position hidden" data-color="blue" src="assets/img/ia-logo-dot-blue.png"/>
-            <img id="green-dot" class="dot in-position hidden" data-color="green" src="assets/img/ia-logo-dot-green.png"/>
-            <img id="red-dot" class="dot in-position hidden" data-color="red" src="assets/img/ia-logo-dot-red.png"/>
-        </div>
-        <div class="content-container">
-            <img class="dot in-menu" data-color="black" src="assets/img/ia-logo-dot-black.png"/>
-            <img class="dot in-menu" data-color="black" src="assets/img/ia-logo-dot-black.png"/>
-            <img class="dot in-menu" data-color="blue" src="assets/img/ia-logo-dot-blue.png"/>
-            <img class="dot in-menu" data-color="green" src="assets/img/ia-logo-dot-green.png"/>
-            <img class="dot in-menu" data-color="red" src="assets/img/ia-logo-dot-red.png"/>
-        </div>
-        <button id="reset">Reset</button>
+        <section class="row">
+            <section class="col-2"></section>
+            <section class="col-6">
+                <div class="img-container">
+                    <img id="background" src="assets/img/ia-logo-back.png"/>
+                    <img id="black-dot" class="dot in-position hidden" data-color="black" src="assets/img/ia-logo-dot-black.png"/>
+                    <img id="second-black-dot" class="dot in-position hidden" data-color="black" src="assets/img/ia-logo-dot-black.png"/>
+                    <img id="blue-dot" class="dot in-position hidden" data-color="blue" src="assets/img/ia-logo-dot-blue.png"/>
+                    <img id="green-dot" class="dot in-position hidden" data-color="green" src="assets/img/ia-logo-dot-green.png"/>
+                    <img id="red-dot" class="dot in-position hidden" data-color="red" src="assets/img/ia-logo-dot-red.png"/>
+                </div>
+            </section>
+            <section class="col-2">
+                <div class="content-container">
+                    <img class="dot in-menu" data-color="black" src="assets/img/ia-logo-dot-black.png"/>
+                    <img class="dot in-menu" data-color="black" src="assets/img/ia-logo-dot-black.png"/>
+                    <img class="dot in-menu" data-color="blue" src="assets/img/ia-logo-dot-blue.png"/>
+                    <img class="dot in-menu" data-color="green" src="assets/img/ia-logo-dot-green.png"/>
+                    <img class="dot in-menu" data-color="red" src="assets/img/ia-logo-dot-red.png"/>
+                </div>
+                <p>
+                    Click and drag these colors to populate the logo to the left! You can reset at any time by clicking the Reset button at the top of the page.
+                </p>
+            </section>
+            <section class="col-1"></section>
+        </section>
     </main>
     
     <script src="./assets/js/bin/app.bundle.js"></script>
