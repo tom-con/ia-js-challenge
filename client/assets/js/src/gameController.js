@@ -1,6 +1,17 @@
 $(document).ready(() => {
-
+    // Unfortunately jQuery/vanilla JS lend themselves
+    // global state management rather than a more
+    // deterministic model. In this case the global
+    // state is maintainging three variables: 
+    
+    // First is the dragged variable. This keeps
+    // track of the element being dragged.
     let dragged = null
+
+    // The blackCount variable is used as a means
+    // of controlling the particular behavior of
+    // black nodes, since they are the odd-ones-out,
+    // having a duo rather than single dot.
     let blackCount = 1
 
     // The nodes data structure is used to keep
@@ -9,7 +20,7 @@ $(document).ready(() => {
     // exact reflection of state, however the
     // state for this application is maintained
     // within the DOM and the javascript, which
-    // is not exactly prefered.
+    // is not preferable.
     let nodes = {
         red: false,
         blue: false,
@@ -23,6 +34,7 @@ $(document).ready(() => {
     function resetInitialState(){
         $('.dot.in-position').addClass('hidden')
         $('.dot.in-menu').removeClass('hidden')
+        $('[data-color=wasBlack]]').data('color', 'black')
         nodes = {
             red: false,
             blue: false,
@@ -37,7 +49,7 @@ $(document).ready(() => {
     function checkWin(){
         let allDone = Object.values(nodes).reduce((acc, n) => acc && n, true)
         // Handle win logic here. Perhaps propagate
-        // to a specific UI condition.
+        // to a specific UI reflection.
         if(allDone){
             console.log('won')
         }
@@ -51,20 +63,24 @@ $(document).ready(() => {
             e.preventDefault()
     }
 
+    // Set the dot that is being dragged
+    function setColor(e){
+        dragged = $(e.target)
+        let color = $(dragged).data('color')
+        $('.bg-controller').removeClass('add-opacity')
+        $(`.${color}-bg`).addClass('add-opacity')
+    }
+
+    // Un-set a dot when a drag finishes
+    function unsetColor(e){
+        let color = $(dragged).data('color')
+        dragged = null
+    }
+    
     // Chained methods to control dot behavior
-    // 1. Set the dot that is being dragged
-    // 2. Un-set a dot when a drag finishes
     $('.dot.in-menu')
-        .on('dragstart', (e) => {
-            dragged = $(e.target)
-            let color = $(dragged).data('color')
-            $('.bg-controller').removeClass('add-opacity')
-            $(`.${color}-bg`).addClass('add-opacity')
-        })
-        .on('dragend', (e) => {
-            let color = $(dragged).data('color')
-            dragged = null
-        })
+        .on('dragstart', setColor)
+        .on('dragend', unsetColor)
 
     // Chained methods to control drop-zone
     // behavior
@@ -78,7 +94,6 @@ $(document).ready(() => {
     // in case I want to improve the UX of
     // hinting at a (un)successful drop
     $('.dot.in-position')
-        .on('dragenter', (e) => {})
         .on('dragover', preventDropDefault)
         .on('dragleave', preventDropDefault)
         .on('drop', (e) => {

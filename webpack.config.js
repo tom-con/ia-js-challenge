@@ -2,9 +2,9 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: ['babel-polyfill','./assets/js/src/app.js'],
+    entry: ['babel-polyfill','./client/assets/js/src/app.js'],
     output: {
-        path: path.resolve(__dirname, 'assets/js/bin'),
+        path: path.resolve(__dirname, 'client/assets/js/bin'),
         filename: 'app.bundle.js'
     },
     watch: true,
