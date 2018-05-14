@@ -34,7 +34,7 @@ $(document).ready(() => {
     function resetInitialState(){
         $('.dot.in-position').addClass('hidden')
         $('.dot.in-menu').removeClass('hidden')
-        $('[data-color=wasBlack]]').data('color', 'black')
+        $('[data-color="wasBlack"]').attr('data-color', 'black')
         nodes = {
             red: false,
             blue: false,
@@ -47,33 +47,37 @@ $(document).ready(() => {
     }
 
     function checkWin(){
+        // Reduces node object to determine if all
+        // nodes have been completed.
         let allDone = Object.values(nodes).reduce((acc, n) => acc && n, true)
-        // Handle win logic here. Perhaps propagate
-        // to a specific UI reflection.
-        if(allDone){
-            console.log('won')
-        }
+
+        // Handle win logic here.
+        if(allDone)
+            $('#win-modal').modal('show')
+        
     }
 
     // Prevent default behaviors (these)
     // cancel the abiltiy for an item to
     // be 'droppable'.
-    function preventDropDefault(e){
-        if($(dragged).data('color') === $(e.target).data('color'))
+    function preventDropDefault(e){ 
+        console.log($(dragged).attr('data-color'), $(e.target).attr('data-color'))
+        if($(dragged).attr('data-color') === $(e.target).attr('data-color')) {
             e.preventDefault()
+        }
     }
 
     // Set the dot that is being dragged
     function setColor(e){
         dragged = $(e.target)
-        let color = $(dragged).data('color')
+        let color = $(dragged).attr('data-color')
         $('.bg-controller').removeClass('add-opacity')
         $(`.${color}-bg`).addClass('add-opacity')
     }
 
     // Un-set a dot when a drag finishes
     function unsetColor(e){
-        let color = $(dragged).data('color')
+        let color = $(dragged).attr('data-color')
         dragged = null
     }
     
@@ -97,14 +101,15 @@ $(document).ready(() => {
         .on('dragover', preventDropDefault)
         .on('dragleave', preventDropDefault)
         .on('drop', (e) => {
-            let color = $(dragged).data('color')
-            if(color === $(e.target).data('color')){
+            let color = $(dragged).attr('data-color')
+            if(color === $(e.target).attr('data-color')){
                 // Necessary because there are two black nodes
                 if(color === 'black'){
                     color += blackCount
                     blackCount+=1
                     // This ensures black can't be put here again
-                    $(e.target).data('color', 'wasBlack')
+                    $(e.target).attr('data-color', 'wasBlack')
+                    console.log($(e.target))
                 }
                 $(e.target).removeClass('hidden')
                 $(dragged).addClass('hidden')
@@ -114,5 +119,6 @@ $(document).ready(() => {
             }
         })
 
+    $('#modal-reset').click(resetInitialState)
     $('#reset').click(resetInitialState)
 })

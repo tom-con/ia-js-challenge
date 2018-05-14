@@ -1,6 +1,7 @@
 import 'babel-polyfill'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'jquery'
+import 'bootstrap'
 import controller from './gameController.js'
 import ui from './uiController.js'
 import '../../css/main.css'
