@@ -1,14 +1,19 @@
 import express from 'express'
 
-const router = express.Router();
+const router = express.Router()
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('This is the users API route.');
+router.get('/', function(req, res) {
+  res.send('This is many users.')
 })
 
-router.get('/:id', function(req, res, next) {
-
+router.get('/:id', function(req, res) {
+  res.send('This is a specific user.')
 })
 
-module.exports = router;
+router.post('/', function(req, res) {
+  
+  res.send('New user created')
+})
+
+export default router

@@ -1,22 +1,24 @@
 import express from 'express'
 import bcrypt from 'bcryptjs'
 
-const router = express.Router();
- 
+const router = express.Router()
+
 /* GET users listing. */
-router.post('/login', function(req, res, next) {
-    const { username, password } = req.params
-    let hashedPassword = bcrypt.hashSync(password,12)
+router.post('/login', function(req, res) {
+  const { username, password } = req.body
+  const hashedPassword = bcrypt.hashSync(password, 12)
 
-    let user = knex('users')
-      .select('name', 'password')
-      .where('name', username)
-      .andWhere('password', hashesPassword)
-      .first()
+  const user = knex('users')
+    .select('name', 'password')
+    .where('name', username)
+    .andWhere('password', hashedPassword)
+    .first()
+
+  res.send(user.name)
 })
 
-router.get('/logout/:id', function(req, res, next) {
-
+router.get('/logout/:id', function(req, res) {
+  res.send('logged out.')
 })
 
-module.exports = router;
+export default router
