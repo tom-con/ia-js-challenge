@@ -1,14 +1,16 @@
 // Update with your config settings.
 
-module.exports = {
+const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME } = process.env
 
+
+module.exports = {
   test: {
     client: 'postgresql',
     connection: {
-      host : '127.0.0.1',
-      user : 'ia-challenge',
-      password : 'koi392UpT',
-      database : 'ia-development'
+      host : DB_HOST,
+      user : DB_USER,
+      password : DB_PASSWORD,
+      database : DB_NAME
     },
     pool: {
       min: 2,
