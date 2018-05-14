@@ -54,9 +54,9 @@ div.content-container {
     position: relative;
     background-image: linear-gradient(217deg, #F8B195, #F67280, #C06C84, #6C5B7B);
     background-size: 600% 600%;
-    -webkit-animation: BackgroundPulse 59s ease infinite;
-    -moz-animation: BackgroundPulse 59s ease infinite;
-    animation: BackgroundPulse 59s ease infinite;
+    -webkit-animation: BackgroundPulse 6s ease infinite;
+    -moz-animation: BackgroundPulse 6s ease infinite;
+    animation: BackgroundPulse 6s ease infinite;
 }
 
 @-webkit-keyframes BackgroundPulse {
@@ -89,9 +89,9 @@ div.content-container {
     -moz-transition: opacity 0.5s linear;
     -o-transition: opacity 0.5s linear;
     background-size: 600% 600%;
-    -webkit-animation: BackgroundPulse 59s ease infinite;
-    -moz-animation: BackgroundPulse 59s ease infinite;
-    animation: BackgroundPulse 59s ease infinite;
+    -webkit-animation: BackgroundPulse 6s ease infinite;
+    -moz-animation: BackgroundPulse 6s ease infinite;
+    animation: BackgroundPulse 6s ease infinite;
 }
 
 .blue-bg {
@@ -108,9 +108,9 @@ div.content-container {
     -moz-transition: opacity 0.5s linear;
     -o-transition: opacity 0.5s linear;
     background-size: 600% 600%;
-    -webkit-animation: BackgroundPulse 59s ease infinite;
-    -moz-animation: BackgroundPulse 59s ease infinite;
-    animation: BackgroundPulse 59s ease infinite;
+    -webkit-animation: BackgroundPulse 6s ease infinite;
+    -moz-animation: BackgroundPulse 6s ease infinite;
+    animation: BackgroundPulse 6s ease infinite;
 }
 
 .black-bg {
@@ -127,9 +127,9 @@ div.content-container {
     -moz-transition: opacity 0.5s linear;
     -o-transition: opacity 0.5s linear;
     background-size: 600% 600%;
-    -webkit-animation: BackgroundPulse 59s ease infinite;
-    -moz-animation: BackgroundPulse 59s ease infinite;
-    animation: BackgroundPulse 59s ease infinite;
+    -webkit-animation: BackgroundPulse 6s ease infinite;
+    -moz-animation: BackgroundPulse 6s ease infinite;
+    animation: BackgroundPulse 6s ease infinite;
 }
 
 .green-bg {
@@ -146,9 +146,9 @@ div.content-container {
     -moz-transition: opacity 0.5s linear;
     -o-transition: opacity 0.5s linear;
     background-size: 600% 600%;
-    -webkit-animation: BackgroundPulse 59s ease infinite;
-    -moz-animation: BackgroundPulse 59s ease infinite;
-    animation: BackgroundPulse 59s ease infinite;
+    -webkit-animation: BackgroundPulse 6s ease infinite;
+    -moz-animation: BackgroundPulse 6s ease infinite;
+    animation: BackgroundPulse 6s ease infinite;
 }
 
 .add-opacity {
