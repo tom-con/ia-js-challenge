@@ -30,4 +30,4 @@ node_modules/
 .next
 
 # Webpack binary
-assets/js/bin/* 
+client/assets/js/bin/* 
